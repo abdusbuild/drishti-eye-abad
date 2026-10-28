@@ -36,44 +36,51 @@
     progress.style.transform = "scaleX(" + (max > 0 ? y / max : 0) + ")";
   }, { passive: true });
 
-  // Split the hero headline into words that rise in one after another
-  document.querySelectorAll("[data-split]").forEach(function (el) {
-    var i = 0;
-    (function split(node) {
-      Array.prototype.slice.call(node.childNodes).forEach(function (child) {
-        if (child.nodeType === 1) { split(child); return; }
-        if (child.nodeType !== 3) return;
-        var frag = document.createDocumentFragment();
-        child.textContent.split(/(\s+)/).forEach(function (part) {
-          if (!part) return;
-          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-          var word = document.createElement("span");
-          word.className = "word";
-          word.innerHTML = "<span></span>";
-          word.firstChild.textContent = part;
-          word.firstChild.style.setProperty("--i", i++);
-          frag.appendChild(word);
-        });
-        node.replaceChild(frag, child);
-      });
-    })(el);
-  });
-
-  // Reveal on scroll, with siblings staggered
-  var revealTargets = document.querySelectorAll(".section__head > *, .symptom-result, .chips, .tabs, .journey li, .bring, .faq__grid > *, .about__copy > *, .program__copy > *, .ayushman__box > *, .facilities__grid > div > *, .facility-list li, .doctor, .award, .review, .gallery__item, .contact__info > *, .appointment, .stat, .qa, .cta-band__inner > *, .footer__grid > *");
-  var revealImages = document.querySelectorAll(".about__media, .program__media, .facilities__media");
+  // Reveal on scroll. Text slides up (siblings staggered), side-by-side blocks drift in from
+  // their side, icons pop, and photos wipe open from the top.
+  var REVEALS = [
+    [".section__head > *, .symptom-result, .chips, .tabs, .journey li, .bring, .faq__grid > *, .about__copy > *, .impact__copy > *, .program__overlay > *, .steps li, .ayushman__box > div > *, .facilities__grid > div > *, .facility-list li, .doctor, .award, .review, .gallery__item, .contact__info > *, .stat__num, .stat__label, .qa, .cta-band__inner > *, .footer__grid > *", ""],
+    [".ayushman__list, .appointment", "reveal--right"],
+    [".stat svg", "reveal--bubble"]
+  ];
+  var revealImages = document.querySelectorAll(".about__media, .program__banner, .facilities__media");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    revealTargets.forEach(function (el) {
-      el.classList.add("reveal");
-      el.style.setProperty("--d", Math.min(Array.prototype.indexOf.call(el.parentNode.children, el), 6));
-      io.observe(el);
+    REVEALS.forEach(function (r) {
+      document.querySelectorAll(r[0]).forEach(function (el) {
+        el.classList.add("reveal");
+        if (r[1]) el.classList.add(r[1]);
+        el.style.setProperty("--d", Math.min(Array.prototype.indexOf.call(el.parentNode.children, el), 6));
+        io.observe(el);
+      });
     });
     revealImages.forEach(function (el) { el.classList.add("reveal-img"); io.observe(el); });
+
+    // Highlighted words in headings change colour as they reach the middle of the screen
+    var lo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-lit"); lo.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -45% 0px" });
+    document.querySelectorAll("h2 em").forEach(function (em) { lo.observe(em); });
+  }
+
+  // Smooth, weighted scrolling (like the reference site's Locomotive Scroll)
+  if (window.Lenis && !reduceMotion) {
+    var lenis = new Lenis({ duration: 1.15 });
+    (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(performance.now());
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest('a[href^="#"]');
+      if (!a || a.getAttribute("href").length < 2) return;
+      var target = document.querySelector(a.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -80 });
+    });
   }
 
   // Count-up for numeric stats

@@ -9,7 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M4 32C14 16 50 16 60 32 50 48 14 48 4 32Z' fill='none' stroke='%23c8102e' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23c8102e'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Questrial&family=Cormorant+Infant:ital,wght@1,500;1,600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -66,17 +66,16 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <div class="hero__frame">
-        <div class="hero__bg"><img src="images/building-front.jpg" alt="" width="1600" height="1200"></div>
-      <div class="container hero__inner">
+      <div class="hero__media"><img src="images/building-front.jpg" alt="The green glass building of Drishti Eye Care Hospital, Aurangabad" width="1600" height="1200"></div>
+      <div class="hero__panel">
         <div class="hero__copy">
-          <p class="eyebrow eyebrow--light">A unit of Dr. A.P.J. Abdul Kalam Charitable Trust</p>
-          <h1 data-split>Clear sight, <em>within everyone's reach.</em></h1>
+          <p class="hero__eyebrow">A unit of Dr. A.P.J. Abdul Kalam Charitable Trust</p>
+          <h1>Clear sight, within everyone's reach.</h1>
           <p class="hero__hindi">हर आँख को रोशनी — आपके अपने औरंगाबाद में</p>
           <p class="hero__lead">Specialist eye care for Aurangabad and the surrounding districts of Bihar and Jharkhand. From routine check-ups to cataract, glaucoma and retina surgery, with free treatment for patients who cannot afford it.</p>
           <div class="hero__actions">
-            <a href="#appointment" class="btn btn--primary btn--lg">Book an appointment</a>
-            <a href="tel:+918105852877" class="btn btn--outline-light btn--lg">
+            <a href="#appointment" class="btn btn--light">Book an appointment</a>
+            <a href="tel:+918105852877" class="btn btn--outline-light">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
               Call now
             </a>
@@ -87,12 +86,6 @@
             <li><strong>Since 2017</strong></li>
           </ul>
         </div>
-        <div class="hero__card">
-          <span class="hero__card-num">14,000+</span>
-          <span class="hero__card-label">eye surgeries every year</span>
-        </div>
-      </div>
-        <a href="#about" class="hero__scroll" aria-label="Scroll to About us"></a>
       </div>
     </section>
 
@@ -118,23 +111,34 @@
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="stats" aria-label="At a glance">
-      <div class="container stats__grid">
-        <div class="stat"><span class="stat__num" data-count="14000" data-suffix="+">14,000+</span><span class="stat__label">Surgeries a year</span></div>
-        <div class="stat"><span class="stat__num" data-count="2017" data-plain>2017</span><span class="stat__label">Serving since</span></div>
-        <div class="stat"><span class="stat__num">₹5 lakh</span><span class="stat__label">Ayushman cover per family</span></div>
-        <div class="stat"><span class="stat__num" data-count="10" data-suffix="+">10+</span><span class="stat__label">Districts served</span></div>
+    <!-- Impact -->
+    <section class="section impact" aria-label="At a glance">
+      <div class="container impact__grid">
+        <div class="impact__copy">
+          <h2>Bringing <em>clear sight</em> to families across Bihar and Jharkhand.</h2>
+          <p>Since 2017, our surgeons, optometrists and outreach teams have carried sight-saving care from the villages of Aurangabad district to our own operating theatre.</p>
+          <a href="#about" class="link-arrow link-arrow--light">More about us</a>
+        </div>
+        <div class="impact__stats">
+          <div class="stat stat--red">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M4 32C13 18 51 18 60 32 51 46 13 46 4 32Z"/><circle cx="32" cy="32" r="10"/><circle cx="32" cy="32" r="3.5"/></svg>
+            <span class="stat__num" data-count="14000" data-suffix="+">14,000+</span><span class="stat__label">Eye surgeries every year</span>
+          </div>
+          <div class="stat stat--amber">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="12" width="48" height="44" rx="4"/><path d="M8 24h48M20 6v12M44 6v12M18 34h8M30 34h8M42 34h4M18 44h8M30 44h8"/></svg>
+            <span class="stat__num" data-count="2017" data-plain>2017</span><span class="stat__label">Serving since</span>
+          </div>
+          <div class="stat stat--green">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l22 8v16c0 13-9.5 23.5-22 27C19.5 53.5 10 43 10 30V14l22-8Z"/><path d="M22 31l7 7 13-14"/></svg>
+            <span class="stat__num">₹5 lakh</span><span class="stat__label">Ayushman cover per family</span>
+          </div>
+          <div class="stat stat--blue">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6a18 18 0 0 0-18 18c0 14 18 34 18 34s18-20 18-34A18 18 0 0 0 32 6Z"/><circle cx="32" cy="24" r="7"/></svg>
+            <span class="stat__num" data-count="10" data-suffix="+">10+</span><span class="stat__label">Districts served</span>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- Specialities marquee -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Cataract</span><span>Glaucoma</span><span>Retina</span><span>Squint &amp; Kids</span><span>Oculoplasty</span><span>Cornea</span><span>Optical</span>
-        <span>Cataract</span><span>Glaucoma</span><span>Retina</span><span>Squint &amp; Kids</span><span>Oculoplasty</span><span>Cornea</span><span>Optical</span>
-      </div>
-    </div>
 
     <!-- About -->
     <section class="section about" id="about">
@@ -182,7 +186,7 @@
           </div>
           <div class="symptom-result__actions">
             <a href="#appointment" class="btn btn--primary" id="symptomBook">Book a check-up</a>
-            <a href="#services" class="btn btn--ghost" id="symptomLink">Learn about this</a>
+            <a href="#services" class="link-arrow" id="symptomLink">Learn about this</a>
           </div>
         </div>
         <p class="disclaimer">This is general information, not a diagnosis. Only an eye doctor can tell what is wrong after examining your eyes.</p>
@@ -214,7 +218,7 @@
             <p>A cataract is a clouding of the eye's natural lens, and the most common cause of treatable blindness. Surgery replaces the cloudy lens with a clear artificial lens (IOL). It is one of the safest and most successful operations in medicine.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="Cataract">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -233,7 +237,7 @@
             <p>Glaucoma damages the optic nerve, often because of high pressure inside the eye. It usually has no early symptoms, and sight lost to glaucoma cannot be brought back, so regular check-ups after 40 are important.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="Glaucoma">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -252,7 +256,7 @@
             <p>The retina is the light-sensing layer at the back of the eye. Diabetes, high blood pressure and ageing can damage it. Early detection and treatment can prevent serious loss of vision.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="Retina">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -271,7 +275,7 @@
             <p>Children's eyes need special care. Squint (crossed eyes) and lazy eye are best treated early, while a child's vision is still developing. We also treat squint in adults.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="Squint & Kids">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -290,7 +294,7 @@
             <p>Oculoplasty deals with the eyelids, tear ducts and the area around the eye. Treatment improves both comfort and appearance.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="Oculoplasty">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -309,7 +313,7 @@
             <p>The cornea is the clear front window of the eye. Infections and injuries can cause ulcers that need urgent treatment. Uveitis is inflammation inside the eye.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="Cornea">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -328,7 +332,7 @@
             <p>An accurate eye test and the right glasses make daily life easier. Our in-house optical shop and contact lens clinic save you a separate trip.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="Optical">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -347,7 +351,7 @@
             <p>Not sure what is wrong? Start with a complete eye check-up. Our doctors examine every part of the eye and guide you to the right treatment.</p>
             <div class="panel__actions">
               <a href="#appointment" class="btn btn--primary" data-service-book="General">Book a consultation</a>
-              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="btn btn--ghost">Ask on WhatsApp</a>
+              <a href="https://wa.me/918105852877" target="_blank" rel="noopener" class="link-arrow">Ask on WhatsApp</a>
             </div>
           </div>
           <div class="panel__col">
@@ -364,23 +368,26 @@
 
     <!-- Free cataract programme -->
     <section class="section program" id="free-cataract">
-      <div class="container program__grid">
-        <div class="program__copy">
-          <p class="eyebrow eyebrow--light">Community programme</p>
-          <h2>Free cataract surgery <em>for those who need it most</em></h2>
-          <p>Cataract is the leading cause of avoidable blindness in rural Bihar. Our outreach team goes to the villages, finds people losing their sight, and looks after them from the first check-up to full recovery, free of cost.</p>
-          <ol class="steps">
-            <li><span>1</span><div><strong>Village screening</strong>Eye camps in villages and blocks across the district.</div></li>
-            <li><span>2</span><div><strong>Free transport</strong>Patients are brought to the hospital and taken back home.</div></li>
-            <li><span>3</span><div><strong>Free surgery</strong>Cataract surgery with lens implant by our surgeons.</div></li>
-            <li><span>4</span><div><strong>Aftercare</strong>Medicines, protective glasses and follow-up check-ups.</div></li>
-          </ol>
-          <a href="#contact" class="btn btn--light">Ask about the next eye camp</a>
-        </div>
-        <figure class="program__media">
+      <div class="container">
+        <div class="program__banner">
           <img src="images/cataract-patients.jpg" alt="Patients wearing protective glasses after free cataract surgery, outside Drishti Eye Care Hospital" loading="lazy" width="1280" height="963">
-          <figcaption>Patients after free cataract surgery at Drishti Eye Care Hospital</figcaption>
-        </figure>
+          <div class="program__overlay">
+            <div>
+              <p class="eyebrow eyebrow--light">Community programme</p>
+              <h2>Free cataract surgery for those who need it most</h2>
+            </div>
+            <div>
+              <p>Cataract is the leading cause of avoidable blindness in rural Bihar. Our outreach team goes to the villages, finds people losing their sight, and looks after them from the first check-up to full recovery, free of cost.</p>
+              <a href="#contact" class="btn btn--light">Ask about the next eye camp</a>
+            </div>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><span>01</span><strong>Village screening</strong><p>Eye camps in villages and blocks across the district.</p></li>
+          <li><span>02</span><strong>Free transport</strong><p>Patients are brought to the hospital and taken back home.</p></li>
+          <li><span>03</span><strong>Free surgery</strong><p>Cataract surgery with lens implant by our surgeons.</p></li>
+          <li><span>04</span><strong>Aftercare</strong><p>Medicines, protective glasses and follow-up check-ups.</p></li>
+        </ol>
       </div>
     </section>
 
@@ -672,7 +679,6 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__big" aria-hidden="true">Drishti Eye Care</div>
     <div class="container footer__grid">
       <div>
         <p class="footer__brand">Drishti Eye Care Hospital</p>
@@ -715,7 +721,7 @@
 
   <!-- Enquire widget -->
   <div class="enquire" id="enquire">
-    <div class="enquire__panel" id="enquirePanel" role="dialog" aria-modal="false" aria-labelledby="enquireTitle" hidden>
+    <div class="enquire__panel" id="enquirePanel" data-lenis-prevent role="dialog" aria-modal="false" aria-labelledby="enquireTitle" hidden>
       <div class="enquire__head">
         <div>
           <p class="enquire__title" id="enquireTitle">Need help?</p>
@@ -772,6 +778,7 @@
     <img alt="">
   </div>
 
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
