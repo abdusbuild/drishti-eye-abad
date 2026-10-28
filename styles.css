@@ -510,6 +510,8 @@ label.check input { width: 18px; height: 18px; accent-color: var(--red); }
 .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--red); transform-origin: left; transform: scaleX(0); z-index: 120; pointer-events: none; }
 
 /* Scroll animations */
+/* Blocks that slide in from the side must not widen the page before they arrive */
+main { overflow-x: hidden; overflow-x: clip; }
 .reveal { opacity: 0; transform: translate3d(0, 40px, 0); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--d, 0) * 120ms); }
 .reveal--left { transform: translate3d(-25%, 0, 0); transition-duration: 2s; }
 .reveal--right { transform: translate3d(25%, 0, 0); transition-duration: 2s; }
