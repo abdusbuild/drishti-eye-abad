@@ -9,10 +9,11 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M4 32C14 16 50 16 60 32 50 48 14 48 4 32Z' fill='none' stroke='%23c8102e' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23c8102e'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Questrial&family=Cormorant+Infant:ital,wght@1,500;1,600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <!-- Top bar -->
   <div class="topbar">
@@ -65,15 +66,17 @@
   <main>
     <!-- Hero -->
     <section class="hero">
+      <div class="hero__frame">
+        <div class="hero__bg"><img src="images/building-front.jpg" alt="" width="1600" height="1200"></div>
       <div class="container hero__inner">
         <div class="hero__copy">
-          <p class="eyebrow">A unit of Dr. A.P.J. Abdul Kalam Charitable Trust</p>
-          <h1>Clear sight, <span class="hl">within everyone's reach</span>.</h1>
+          <p class="eyebrow eyebrow--light">A unit of Dr. A.P.J. Abdul Kalam Charitable Trust</p>
+          <h1 data-split>Clear sight, <em>within everyone's reach.</em></h1>
           <p class="hero__hindi">हर आँख को रोशनी — आपके अपने औरंगाबाद में</p>
           <p class="hero__lead">Specialist eye care for Aurangabad and the surrounding districts of Bihar and Jharkhand. From routine check-ups to cataract, glaucoma and retina surgery, with free treatment for patients who cannot afford it.</p>
           <div class="hero__actions">
             <a href="#appointment" class="btn btn--primary btn--lg">Book an appointment</a>
-            <a href="tel:+918105852877" class="btn btn--ghost btn--lg">
+            <a href="tel:+918105852877" class="btn btn--outline-light btn--lg">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
               Call now
             </a>
@@ -84,13 +87,12 @@
             <li><strong>Since 2017</strong></li>
           </ul>
         </div>
-        <div class="hero__media">
-          <img src="images/building-front.jpg" alt="The green glass building of Drishti Eye Care Hospital, Aurangabad" width="1600" height="1200">
-          <div class="hero__card">
-            <span class="hero__card-num">14,000+</span>
-            <span class="hero__card-label">eye surgeries every year</span>
-          </div>
+        <div class="hero__card">
+          <span class="hero__card-num">14,000+</span>
+          <span class="hero__card-label">eye surgeries every year</span>
         </div>
+      </div>
+        <a href="#about" class="hero__scroll" aria-label="Scroll to About us"></a>
       </div>
     </section>
 
@@ -120,11 +122,19 @@
     <section class="stats" aria-label="At a glance">
       <div class="container stats__grid">
         <div class="stat"><span class="stat__num" data-count="14000" data-suffix="+">14,000+</span><span class="stat__label">Surgeries a year</span></div>
-        <div class="stat"><span class="stat__num">2017</span><span class="stat__label">Serving since</span></div>
+        <div class="stat"><span class="stat__num" data-count="2017" data-plain>2017</span><span class="stat__label">Serving since</span></div>
         <div class="stat"><span class="stat__num">₹5 lakh</span><span class="stat__label">Ayushman cover per family</span></div>
-        <div class="stat"><span class="stat__num">10+</span><span class="stat__label">Districts served</span></div>
+        <div class="stat"><span class="stat__num" data-count="10" data-suffix="+">10+</span><span class="stat__label">Districts served</span></div>
       </div>
     </section>
+
+    <!-- Specialities marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Cataract</span><span>Glaucoma</span><span>Retina</span><span>Squint &amp; Kids</span><span>Oculoplasty</span><span>Cornea</span><span>Optical</span>
+        <span>Cataract</span><span>Glaucoma</span><span>Retina</span><span>Squint &amp; Kids</span><span>Oculoplasty</span><span>Cornea</span><span>Optical</span>
+      </div>
+    </div>
 
     <!-- About -->
     <section class="section about" id="about">
@@ -134,7 +144,7 @@
         </div>
         <div class="about__copy">
           <p class="eyebrow">About us</p>
-          <h2>A permanent, specialist eye hospital for the whole community</h2>
+          <h2>A permanent, specialist eye hospital <em>for the whole community</em></h2>
           <p>Drishti Eye Care Hospital was founded in 2017 by a group of dedicated local people, including skilled and experienced doctors, under the <strong>Dr. A.P.J. Abdul Kalam Charitable Trust</strong>. Our aim was simple: build a specialist eye hospital in Aurangabad that anyone can walk into, whatever their ability to pay.</p>
           <p>Today we carry out more than 14,000 eye surgeries a year. Patients come to us from Aurangabad, Obra, Deo, Nabinagar, Barun, Dehri, Hariharganj, Nawada, Buxar, Barachatti and Haidar Nagar in Jharkhand.</p>
           <ul class="checklist">
@@ -152,7 +162,7 @@
       <div class="container">
         <div class="section__head">
           <p class="eyebrow">Know your symptoms</p>
-          <h2>What is troubling your eyes?</h2>
+          <h2>What is troubling <em>your eyes?</em></h2>
           <p>आपकी आँखों में क्या परेशानी है? Pick a symptom to see which kind of care usually helps.</p>
         </div>
         <div class="chips" role="group" aria-label="Eye symptoms">
@@ -184,7 +194,7 @@
       <div class="container">
         <div class="section__head">
           <p class="eyebrow">Our specialities</p>
-          <h2>Complete eye care under one roof</h2>
+          <h2>Complete eye care <em>under one roof</em></h2>
           <p>Diagnosis, medical treatment and surgery, from your first eye test to follow-up after an operation.</p>
         </div>
         <div class="tabs" role="tablist" aria-label="Specialities">
@@ -357,7 +367,7 @@
       <div class="container program__grid">
         <div class="program__copy">
           <p class="eyebrow eyebrow--light">Community programme</p>
-          <h2>Free cataract surgery for those who need it most</h2>
+          <h2>Free cataract surgery <em>for those who need it most</em></h2>
           <p>Cataract is the leading cause of avoidable blindness in rural Bihar. Our outreach team goes to the villages, finds people losing their sight, and looks after them from the first check-up to full recovery, free of cost.</p>
           <ol class="steps">
             <li><span>1</span><div><strong>Village screening</strong>Eye camps in villages and blocks across the district.</div></li>
@@ -379,7 +389,7 @@
       <div class="container ayushman__box">
         <div>
           <p class="eyebrow">Ayushman Bharat · PM-JAY</p>
-          <h2>Cashless eye treatment with your Ayushman card</h2>
+          <h2>Cashless eye treatment <em>with your Ayushman card</em></h2>
           <p>We are an empanelled hospital under Pradhan Mantri Jan Arogya Yojana. Eligible families get cover of up to <strong>₹5 lakh per year</strong> for surgeries such as cataract, corneal grafting, DCR and retinal laser. Bring your Ayushman card and Aadhaar card to the help desk.</p>
           <p class="note">Ayushman cards issued in other states may have different rules. Please call us before your visit to check.</p>
         </div>
@@ -402,7 +412,7 @@
         </figure>
         <div>
           <p class="eyebrow">Facilities &amp; diagnostics</p>
-          <h2>Equipped for accurate diagnosis</h2>
+          <h2>Equipped for <em>accurate diagnosis</em></h2>
           <ul class="facility-list">
             <li><strong>Slit lamp examination</strong><span>Detailed view of the front of the eye</span></li>
             <li><strong>Visual field test</strong><span>Essential for glaucoma detection</span></li>
@@ -420,7 +430,7 @@
       <div class="container">
         <div class="section__head">
           <p class="eyebrow">Patient guide</p>
-          <h2>Your visit, step by step</h2>
+          <h2>Your visit, <em>step by step</em></h2>
           <p>Coming to Drishti for the first time? Here is what to expect.</p>
         </div>
         <ol class="journey">
@@ -451,7 +461,7 @@
       <div class="container">
         <div class="section__head">
           <p class="eyebrow">Our team</p>
-          <h2>Meet our doctors</h2>
+          <h2>Meet our <em>doctors</em></h2>
           <p>Experienced eye surgeons supported by trained optometrists, nurses and outreach staff.</p>
         </div>
         <div class="doctor-grid">
@@ -484,7 +494,7 @@
       <div class="container">
         <div class="section__head">
           <p class="eyebrow">Recognition</p>
-          <h2>Awards &amp; certificates</h2>
+          <h2>Awards &amp; <em>certificates</em></h2>
         </div>
         <div class="award-grid">
           <div class="award"><span class="award__year">2021</span><h3>Exemplary Performance under PM-JAY</h3><p>Awarded by the Civil Surgeon and DPM, Aurangabad</p></div>
@@ -496,9 +506,9 @@
 
     <!-- CTA band -->
     <section class="cta-band">
-      <div class="container cta-band__inner">
+      <div class="cta-band__inner">
         <div>
-          <h2>Don't ignore changes in your vision</h2>
+          <h2>Don't ignore changes <em>in your vision</em></h2>
           <p>आँखों की जाँच में देर न करें। Most eye problems are easier to treat when they are found early.</p>
         </div>
         <div class="cta-band__actions">
@@ -513,7 +523,7 @@
       <div class="container">
         <div class="section__head">
           <p class="eyebrow">Gallery</p>
-          <h2>Inside Drishti</h2>
+          <h2>Inside <em>Drishti</em></h2>
         </div>
         <div class="gallery__grid">
           <button class="gallery__item gallery__item--tall" data-full="images/entrance-hindi.jpg"><img src="images/entrance-hindi.jpg" alt="Hospital entrance" loading="lazy"></button>
@@ -530,7 +540,7 @@
       <div class="container">
         <div class="section__head">
           <p class="eyebrow">Patient reviews</p>
-          <h2>What our patients say</h2>
+          <h2>What our <em>patients say</em></h2>
           <p>Rated <strong>4.4 out of 5</strong> by 138 people on Justdial and <strong>4.6</strong> on Google. Below are short summaries of public reviews.</p>
         </div>
         <div class="review-grid">
@@ -546,7 +556,7 @@
       <div class="container faq__grid">
         <div>
           <p class="eyebrow">FAQs</p>
-          <h2>Frequently asked questions</h2>
+          <h2>Frequently asked <em>questions</em></h2>
           <p class="faq__lead">Can't find your answer? Call us on <a href="tel:+918105852877">081058 52877</a> or message us on <a href="https://wa.me/918105852877" target="_blank" rel="noopener">WhatsApp</a>.</p>
         </div>
         <div class="faq__list">
@@ -587,7 +597,7 @@
       <div class="container contact__grid">
         <div class="contact__info">
           <p class="eyebrow">Visit us</p>
-          <h2>Contact &amp; location</h2>
+          <h2>Contact &amp; <em>location</em></h2>
           <ul class="contact-list">
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
@@ -613,7 +623,7 @@
         </div>
 
         <div class="appointment" id="appointment">
-          <h2>Book an appointment</h2>
+          <h2>Book an <em>appointment</em></h2>
           <p>Fill in your details and send them to us on WhatsApp. Our team will confirm your visit.</p>
           <form id="apptForm" novalidate>
             <label>Patient name
@@ -662,6 +672,7 @@
   </main>
 
   <footer class="footer">
+    <div class="container footer__big" aria-hidden="true">Drishti Eye Care</div>
     <div class="container footer__grid">
       <div>
         <p class="footer__brand">Drishti Eye Care Hospital</p>
